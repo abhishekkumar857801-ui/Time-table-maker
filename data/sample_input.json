@@ -1,0 +1,66 @@
+{
+  "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+  "periods": ["09:00-10:00", "10:00-11:00", "11:00-12:00", "12:00-13:00", "14:00-15:00", "15:00-16:00"],
+  "lunch_after_period": 4,
+
+  "rooms": [
+    {"id": "R101", "capacity": 60, "type": "lecture"},
+    {"id": "R102", "capacity": 60, "type": "lecture"},
+    {"id": "R103", "capacity": 45, "type": "lecture"},
+    {"id": "LAB-A", "capacity": 60, "type": "lab"},
+    {"id": "LAB-B", "capacity": 45, "type": "lab"}
+  ],
+
+  "teachers": [
+    {"id": "T1", "name": "Dr. Rao",     "max_per_day": 4, "unavailable": [["Mon", 1]], "avoid": [["Fri", 6]]},
+    {"id": "T2", "name": "Prof. Mehta", "max_per_day": 4, "unavailable": [["Wed", 5], ["Wed", 6]], "avoid": []},
+    {"id": "T3", "name": "Dr. Iyer",    "max_per_day": 4, "unavailable": [], "avoid": [["Mon", 1], ["Tue", 1]]},
+    {"id": "T4", "name": "Prof. Khan",  "max_per_day": 4, "unavailable": [["Fri", 1], ["Fri", 2]], "avoid": []},
+    {"id": "T5", "name": "Dr. Nair",    "max_per_day": 4, "unavailable": [], "avoid": [["Thu", 6]]},
+    {"id": "T6", "name": "Prof. Das",   "max_per_day": 4, "unavailable": [["Tue", 1], ["Tue", 2], ["Tue", 3]], "avoid": []}
+  ],
+
+  "groups": [
+    {"id": "MCA-1A", "size": 55},
+    {"id": "MCA-1B", "size": 50},
+    {"id": "MCA-1C", "size": 40}
+  ],
+
+  "courses": [
+    {"group": "MCA-1A", "subject": "Operations Research",  "teacher": "T1", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1A", "subject": "Advanced DBMS",        "teacher": "T2", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1A", "subject": "Python Programming",   "teacher": "T3", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1A", "subject": "Computer Networks",    "teacher": "T4", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1A", "subject": "Software Engineering", "teacher": "T5", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1A", "subject": "Python Lab",           "teacher": "T3", "hours": 2, "type": "lab"},
+    {"group": "MCA-1A", "subject": "DBMS Lab",             "teacher": "T6", "hours": 2, "type": "lab"},
+
+    {"group": "MCA-1B", "subject": "Operations Research",  "teacher": "T1", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1B", "subject": "Advanced DBMS",        "teacher": "T2", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1B", "subject": "Python Programming",   "teacher": "T3", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1B", "subject": "Computer Networks",    "teacher": "T4", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1B", "subject": "Software Engineering", "teacher": "T5", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1B", "subject": "Python Lab",           "teacher": "T6", "hours": 2, "type": "lab"},
+    {"group": "MCA-1B", "subject": "DBMS Lab",             "teacher": "T6", "hours": 2, "type": "lab"},
+
+    {"group": "MCA-1C", "subject": "Operations Research",  "teacher": "T1", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1C", "subject": "Advanced DBMS",        "teacher": "T6", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1C", "subject": "Python Programming",   "teacher": "T5", "hours": 4, "type": "lecture"},
+    {"group": "MCA-1C", "subject": "Computer Networks",    "teacher": "T4", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1C", "subject": "Software Engineering", "teacher": "T5", "hours": 3, "type": "lecture"},
+    {"group": "MCA-1C", "subject": "Python Lab",           "teacher": "T3", "hours": 2, "type": "lab"},
+    {"group": "MCA-1C", "subject": "DBMS Lab",             "teacher": "T2", "hours": 2, "type": "lab"}
+  ],
+
+  "settings": {
+    "max_periods_per_day_group": 5,
+    "max_same_subject_per_day": 1,
+    "time_limit_seconds": 60,
+    "weights": {
+      "student_gap": 10,
+      "last_period": 2,
+      "teacher_avoid": 5,
+      "daily_balance": 3
+    }
+  }
+}
